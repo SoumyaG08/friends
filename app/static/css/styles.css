@@ -1,3 +1,66 @@
 * {
   font-family: monaco;
 }
+.container{
+	margin: 0 auto;
+	background-color: #2F4F4F;
+	color: silver;
+	width: 980px;
+	height: 1000px;
+	text-align: center;
+}
+
+.table{
+	border: 1px solid #FFF;
+	margin-left: 180px;
+	width: 500px;
+}
+
+th{
+border-bottom: 1px solid;
+}
+
+.bottom{
+	margin-top: 100px;
+}
+.navbar a{
+	color: #FFF;
+	position: relative;
+	left: 300px;
+	bottom: 100px;
+
+}
+a {
+	color: #bb7d7d;
+}
+
+.logout{
+    position: relative;
+    left: 400px;
+    bottom: 50px;
+    padding: 5px;
+    border: 1px solid silver;
+    border-radius: 0.5;
+    border-radius: 8px;
+    text-decoration: none;
+}
+.profile{
+	position: relative;
+    left: 400px;
+    top: 20px;
+    padding: 5px;
+    border: 1px solid silver;
+    border-radius: 0.5;
+    border-radius: 8px;
+    text-decoration: none;
+}
+.home{
+	    position: relative;
+    left: 400px;
+    top: 20px;
+    padding: 5px;
+    border: 1px solid silver;
+    border-radius: 0.5;
+    border-radius: 8px;
+    text-decoration: none;
+}

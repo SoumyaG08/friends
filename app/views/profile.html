@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile View</title>
+	<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="container">
+<div class="nav">
+<a class ='home' href="/friends">Home</a>
+<a class='profile' href="/logout">Logout</a>
+</div>
+<div>
+	<h2 class="name">{{user['alias']}}'s Profile</h2>
+	<h3>Name: {{user['user']}}</h3>
+	<h3>Email Address: {{user['email']}} </h3>
+</div>
+</div>
+</body>
+</html>

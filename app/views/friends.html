@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Friends!</title>
+	<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="container">
+<h1>Welcome {{session['alias']}}!</h1>
+<a class="logout" href="/logout">Logout</a>
+{%if users%}
+<p>Here is a list of your friends:</p>
+<div class="table">
+	<table>
+		<tr>
+			<th>Alias</th>
+			<th>Action</th>
+		</tr>
+		{%for user in users%}
+		<tr>
+			<form action="/destroy/{{user['friend_id']}}" method="post">
+				<td>{{user['friend_alias']}}</td>
+				<td class="action"><a href="/profile/{{user['friend_id']}}">View Profile</a>&nbsp; <input type="submit" value="Remove as Friend"></td>
+			</form>
+		</tr>
+		{%endfor%}
+	</table>
+</div>
+{%else%}
+<h2>You do not have friends yet!</h2>
+{%endif%}
+<p class="bottom">Other Users not on your friend's list:</p>
+{%if friends%}
+<div class="table">
+	<table>
+		<tr>
+			<th>Alias</th>
+			<th>Action</th>
+		</tr>
+		{%for friend in friends%}
+		<tr>
+			<td><a href="/profile/{{friend['id']}}">{{friend['alias']}}</a></td>
+			<td><form action="/add/{{friend['id']}}" method="post"><input type="submit" value="Add as Friend"></form></td>
+		</tr>
+		{%endfor%}
+	</table>
+</div>
+{%else%}
+<h3>There are no other active users!</h3>
+{%endif%}
+</div>
+</body>
+</html>

@@ -1,8 +1,74 @@
 <html>
   <head>
     <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+    <title>Main Page</title>
+    <meta charset="UTF-8">
   </head>
   <body>
-    The best place to start is the "WelcomeController.py" file in app/controllers.
-  </body>
+<div class="container">
+	<div class="contact-form">
+  		{% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <h3>{{message}}</h3>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+  <h1>Login Form</h1>
+            <form action="/login" method="post" class="my-form" id="my-form">
+                <fieldset>
+                    <legend>Basic Info</legend>
+
+                    <div>
+                        <label>Your Email: &nbsp;</label>
+                        <input type="text" name="email" id="email" required placeholder="Enter Email!">
+                    </div>
+                    <div>
+                        <label>Password: &nbsp;</label>
+                        <input type="password" name="pwd" id="pwd" required placeholder="Enter Password!">
+                    </div>
+                    <button type="submit" name='submit' id="btn">Sign In</button>
+
+            </form>
+
+            </fieldset>
+            </div>
+
+            <h1>Registration</h1>
+    <form action="/register" method="post">
+       <fieldset>
+            <legend>Basic Info</legend>
+                <div>
+                    <label>Name: &nbsp;</label>
+                    <input type="text" name="fname" id="fname" required placeholder="Enter Name!">
+                </div>
+                <div>
+                    <label>Alias: &nbsp;</label>
+                    <input type="text" name="alias" id="alias" required placeholder="Enter Alias!">
+                </div>
+                <div>
+                    <label>Your Email: &nbsp;</label>
+                    <input type="text" name="email" id="email" required placeholder="Enter Email!">
+                </div>
+                <div>
+                    <label>Password: &nbsp;</label>
+                    <input type="password" name="pwd" id="pwd" required placeholder="Enter Password!">
+                    <p>*Your password should be atleast 8 characters</p>
+                </div>
+                <div>
+                    <label>Confirm Password: &nbsp;</label>
+                    <input type="password" name="c_pwd" id="c_pwd" required placeholder="Retype Password!">
+                </div>
+                <div>
+                    <label>Date of Birth: &nbsp;</label>
+                    <input type="date" name="dob" id="dob" required placeholder="YYYY-MM-DD">
+                </div>
+                 
+               <input type="submit" name="register" value="Register">
+           </fieldset>
+    </form>
+
+
+</div>  
+</body>
 </html>
